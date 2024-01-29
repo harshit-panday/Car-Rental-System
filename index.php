@@ -150,6 +150,21 @@
         <a href="#" class="nav-link"><h5>Hyundai</h5></a>
       </li>
     </ul>
+
+    <ul class="navbar-nav me-auto text-center">
+      <li class="nav-item bg-info">
+        <a href="#" class="nav-link text-light"><h3>Categories</h3></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><h5>Sports-Car</h5></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><h5>SUV</h5></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><h5>Luxury Cars</h5></a>
+      </li>
+    </ul>
     
     
   </div>
