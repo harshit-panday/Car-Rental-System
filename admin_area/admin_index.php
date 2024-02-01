@@ -10,6 +10,11 @@
      rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
      crossorigin="anonymous">
 
+     <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+
      <!-- css file -->
      <link rel="stylesheet" href="../style.css">
 </head>
@@ -39,11 +44,11 @@
                     <p class="text-light text-center text-dark">Admin Name</p>
                 </div>
                 <div class="button text-center  ">
-                    <button  class="my-3"><a href="insert_categories.php" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Cars</a></button>
+                    <button  class="my-3"><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Cars</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Cars</a></button>
-                    <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Categories</a></button>
+                    <button ><a href="admin_index.php?insert_category" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Categories</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Categories</a></button>
-                    <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Brands</a></button>
+                    <button ><a href="admin_index.php?insert_brand" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Brands</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Brands</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">All orders</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">All Payment</a></button>
@@ -53,6 +58,18 @@
             </div>
         </div>    
     </div>
+
+<div class="container my-5">
+    <?php
+    if(isset($_GET['insert_category'])){
+        include('insert_categories.php');
+    }
+    if(isset($_GET['insert_brand'])){
+        include('insert_brands.php');
+    }
+    ?>
+</div>
+
 
 
     <!--footer wala page hey ye -->
