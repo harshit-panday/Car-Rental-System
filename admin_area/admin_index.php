@@ -44,7 +44,7 @@
                     <p class="text-light text-center text-dark">Admin Name</p>
                 </div>
                 <div class="button text-center  ">
-                    <button  class="my-3"><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Cars</a></button>
+                    <button  class="my-3"><a href="insert_cars.php" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Cars</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Cars</a></button>
                     <button ><a href="admin_index.php?insert_category" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Categories</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Categories</a></button>
@@ -59,7 +59,7 @@
         </div>    
     </div>
 
-<div class="container my-5">
+<div class="container my-3">
     <?php
     if(isset($_GET['insert_category'])){
         include('insert_categories.php');
