@@ -77,68 +77,39 @@ include('includes/connect.php');
 </div>
 
 <!-- side nav bar aur product ke liye ye code hey -->
-<div class="row">
+<div class="row px-3">
   <div class="col-md -10">
     <!-- product -->
     <div class="row">
-      <div class="col-md-4  mb-2">
-      <div class="card">
-      <img src="./images/audi.png" class="image_product" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">Audi</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Book</a>
+      <!-- fetching product -->
+      <?php
+      $select_query="Select * from `cars` order by rand() LIMIT 0,9" ;
+      $result_query=mysqli_query($con,$select_query);
+      // $row=mysqli_fetch_assoc($result_query);
+      // echo $row['car_title'];
+      while($row=mysqli_fetch_assoc($result_query)){
+        $car_id=$row['car_id'];
+        $car_title=$row['car_title'];
+        $car_description=$row['car_description'];
+        $car_image=$row['car_image'];
+        $car_price=$row['car_price'];
+        $category_id=$row['category_id'];
+        $brand_id=$row['brand_id'];
+        echo "<div class='col-md-4  mb-2'>
+        <div class='card'>
+        <img src='./admin_area/car_images/$car_image' class='image_product' alt='$car_title'>
+        <div class='card-body'>
+        <h5 class='card-title'>$car_title</h5>
+        <p class='card-text'>$car_description</p>
+        <a href='#' class='btn btn-primary'>Book</a>
+        </div>
+        </div></div>";
+      }
+       ?>
+      <!-- row end -->
     </div>
-    </div></div>
-      <div class="col-md-4 mb-2">
-      <div class="card">
-      <img src="./images/jeep.png" class="image_product" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">Jeep</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Book</a>
-    </div></div></div>
-      <div class="col-md-4  mb-2">
-      <div class="card">
-      <img src="./images/suzuki.png" class="image_product" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">Suzuki</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Book</a>
-      </div>
-      </div>
+    <!-- col end -->
     </div>
-    <div class="col-md-4  mb-2">
-      <div class="card">
-      <img src="./images/ferrari.png" class="image_product" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">BMW</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Book</a>
-      </div>
-      </div>
-    </div>
-    <div class="col-md-4  mb-2">
-      <div class="card">
-      <img src="./images/toyota.png" class="image_product" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">toyota</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Book</a>
-      </div>
-      </div>
-    </div>
-    <div class="col-md-4  mb-2">
-      <div class="card">
-      <img src="./images/ferrari.png" class="image_product" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">ferrari</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Book</a>
-      </div>
-      </div>
-    </div>
-  </div></div>
   
   <!-- sidebar -->
   <div class="col-md-2" style="background-color: aquamarine; padding:0%">
@@ -184,7 +155,7 @@ include('includes/connect.php');
     
   </div>
 </div>
-
+</div>
 
 
 
