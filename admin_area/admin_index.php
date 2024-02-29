@@ -1,3 +1,8 @@
+<?php
+include('../includes/connect.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +22,12 @@
 
      <!-- css file -->
      <link rel="stylesheet" href="../style.css">
+     <style>
+        .car_img{
+            width:10%;
+            object-fit: contain;
+        }
+     </style>
 </head>
 <body>
     <!-- navbar -->
@@ -45,11 +56,11 @@
                 </div>
                 <div class="button text-center  ">
                     <button  class="my-3"><a href="insert_cars.php" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Cars</a></button>
-                    <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Cars</a></button>
+                    <button ><a href="admin_index.php?view_cars" class="nav-link text-light bg-info mx-1 my-1 p-2">View Cars</a></button>
                     <button ><a href="admin_index.php?insert_category" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Categories</a></button>
-                    <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Categories</a></button>
+                    <button ><a href="admin_index.php?view_categories" class="nav-link text-light bg-info mx-1 my-1 p-2">View Categories</a></button>
                     <button ><a href="admin_index.php?insert_brand" class="nav-link text-light bg-info mx-1 my-1 p-2">Insert Brands</a></button>
-                    <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">View Brands</a></button>
+                    <button ><a href="admin_index.php?view_brands" class="nav-link text-light bg-info mx-1 my-1 p-2">View Brands</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">All orders</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">All Payment</a></button>
                     <button ><a href="" class="nav-link text-light bg-info mx-1 my-1 p-2">List Users</a></button>
@@ -66,6 +77,15 @@
     }
     if(isset($_GET['insert_brand'])){
         include('insert_brands.php');
+    }
+    if(isset($_GET['view_cars'])){
+        include('view_cars.php');
+    }
+    if(isset($_GET['view_categories'])){
+        include('view_categories.php');
+    }
+    if(isset($_GET['view_brands'])){
+        include('view_brands.php');
     }
     ?>
 </div>

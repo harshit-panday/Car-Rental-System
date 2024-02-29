@@ -41,7 +41,7 @@ include('includes/connect.php');
           <a class="nav-link" href="#">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="./user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
@@ -64,7 +64,7 @@ include('includes/connect.php');
           <a class="nav-link" href="#">Welcome Guest</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="./user_login.php">Login</a>
         </li>
 </ul>
 </nav>
