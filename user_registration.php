@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container-fluid my-3">
-        <h2 class="text-center">New User Registration</h2>
+        <h2 class="text-center"><i class="fa fa-car" aria-hidden="true"></i>New User Registration</h2>
         <div class="row d-flex align-item-center justify-content-center">
             <div class="col-lg-12 col-xl-6">
             <form action="" method="post" enctype="multipart/form-data">
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                    <label  for="user_contact" class="form-label">Contact</label>
+                    <label  for="user_contact" class="form-label"><i class="fa fa-address-book" aria-hidden="true"></i>Contact</label>
                     <input type="text" id="user_contact" class="form-control" placeholder="enter your Mobile number" autocomplete="off" required="required" name="user_contact">
                 </div>
 
