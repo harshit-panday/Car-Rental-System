@@ -40,6 +40,7 @@
                     <label  for="user_password" class="form-label">Password</label>
                     <input type="password" id="user_password" class="form-control"  placeholder="enter your password" autocomplete="off" required="required" name="user_password">
                 </div>
+                
 
                 <div class="form-outline mb-4">
                     <label  for="user_password" class="form-label">Confirm Password</label>

@@ -10,6 +10,7 @@
     </thead>
     <tbody>
         <?php
+        global $con;
         $select_cat="select * from `brands`";
         $result=mysqli_query($con,$select_cat);
         $number=0;

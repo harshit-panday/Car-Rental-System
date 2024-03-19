@@ -1,6 +1,7 @@
 <!-- file connect ho raha hey yaha per -->
 <?php
 include('includes/connect.php');
+include('functions/common_function.php');
 ?>
 
 
@@ -35,10 +36,10 @@ include('includes/connect.php');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Product</a>
+          <a class="nav-link" href="display_all.php">Product</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./user_registration.php">Register</a>
@@ -50,9 +51,9 @@ include('includes/connect.php');
           <a class="nav-link" href="#">Total price</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
+      <form class="d-flex" role="search" action="search_product.php" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
       </form>
     </div>
   </div>
@@ -83,28 +84,11 @@ include('includes/connect.php');
     <div class="row">
       <!-- fetching product -->
       <?php
-      $select_query="Select * from `cars` order by rand() LIMIT 0,9" ;
-      $result_query=mysqli_query($con,$select_query);
-      // $row=mysqli_fetch_assoc($result_query);
-      // echo $row['car_title'];
-      while($row=mysqli_fetch_assoc($result_query)){
-        $car_id=$row['car_id'];
-        $car_title=$row['car_title'];
-        $car_description=$row['car_description'];
-        $car_image=$row['car_image'];
-        $car_price=$row['car_price'];
-        $category_id=$row['category_id'];
-        $brand_id=$row['brand_id'];
-        echo "<div class='col-md-4  mb-2'>
-        <div class='card'>
-        <img src='./admin_area/car_images/$car_image' class='image_product' alt='$car_title'>
-        <div class='card-body'>
-        <h5 class='card-title'>$car_title</h5>
-        <p class='card-text'>$car_description</p>
-        <a href='#' class='btn btn-primary'>Book</a>
-        </div>
-        </div></div>";
-      }
+     getcars();
+     get_unique_categories();
+     get_unique_brands();
+     $ip = getIPAddress();  
+    echo 'User Real IP Address - '.$ip; 
        ?>
       <!-- row end -->
     </div>
@@ -119,17 +103,7 @@ include('includes/connect.php');
       </li>
 
     <?php
-    $select_brands="Select * from `brands`";
-    $result_brands=mysqli_query($con,$select_brands);
-    // $row_data=mysqli_fetch_assoc($result_brands);
-    // echo $row_data['brand_title'];
-    while($row_data=mysqli_fetch_assoc($result_brands)){
-      $brand_title=$row_data['brand_title'];
-      $brand_id=$row_data['brand_id'];
-      echo " <li class='nav-item'>
-      <a href='index.php?brand=$brand_id' class='nav-link'><h5>$brand_title</h5></a>
-    </li>";
-    }
+    getbrands();
     ?>
     </ul>
 
@@ -138,17 +112,7 @@ include('includes/connect.php');
         <a href="#" class="nav-link text-light"><h3>Categories</h3></a>
       </li>
       <?php
-    $select_categories="Select * from `categories`";
-    $result_categories=mysqli_query($con,$select_categories);
-    // $row_data=mysqli_fetch_assoc($result_brands);
-    // echo $row_data['brand_title'];
-    while($row_data=mysqli_fetch_assoc($result_categories)){
-      $category_title=$row_data['category_title'];
-      $category_id=$row_data['category_id'];
-      echo " <li class='nav-item'>
-      <a href='index.php?category=$category_id' class='nav-link'><h5>$category_title</h5></a>
-    </li>";
-    }
+    getcategories();
     ?>
     </ul>
     
@@ -161,9 +125,8 @@ include('includes/connect.php');
 
 
 
-<!--footer wala page hey ye -->
-<footer class="footer" style="background-color: aqua; padding: 3px; text-align:center">
-<p>All right is been reserved Designed by Harshit , Tanmay , Praveen</p>
+<!--footer wala page hey ye include footer.php -->
+<?php   include("./includes/footer.php");    ?>
 </div>
     
 
